@@ -1,0 +1,23 @@
+#particles-js{
+    background:url("../image/sea.jpg");
+}
+#particles-js-text{
+    z-index: 2;
+    font-weight: 600;
+    font-size: 5.5rem;
+    color: aqua;
+    font-family:'STXingkai';
+}
+ #list{
+    width: 100%;
+    height: 6.5vw;
+    background: rgba(255, 255, 255, 0.6);
+    position: fixed;
+}
+#list li {
+    float:left ;
+    margin: 2.5vw;
+}
+#list ul{
+    float: right;
+}
