@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div id="Big-contain">
+<div id="particles-js">
+    <div id="list">
+        <ul>
+            <li>home</li>
+            <li>person</li>
+            <li>work</li>
+            <li>contact</li>
+        </ul>
+    </div>
+    <div id="index-introduce">
+        <p id="welcome">Welcome To My Personal Website</p>
+        <span id="introduce">My name is Li Jing. I am from Heilongjiang Province, and I am a front end engineer.</span>
+    </div>
+</div>
+    <div id="IntroduceMyself">
+    <ul ID="modelTitle">
+        <li>All</li>
+        <li class="selected">Me</li>
+        <li>Knowledge</li>
+        <li>Project</li>
+    </ul>
+    </div>
+</div>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    var modelTitleArry = $('#modelTitle li');
+    for(var i=0;i<modelTitleArry.length;i++){
+        $(this).on('click', (e)=>{
+            for(var j=0;j<modelTitleArry.length;j++){
+                $(modelTitleArry[j]).removeClass('selected')
+
+            }
+            console.log(e.trage)
+            //e.addClass('select')
+        })
+
+    }
+
+</script>
