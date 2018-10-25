@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
 </head>
 <body>
 <div id="Big-contain">
@@ -30,6 +31,78 @@
         <li>Knowledge</li>
         <li>Project</li>
     </ul>
+        <div id="tab">
+            <div id="allText"></div>
+            <div id="myText" style="display: none">
+                <p>
+                    Hello,你好。
+                </p>
+                <div id="myText-Personal">
+                我叫李晶，目前是东北农业大学软件工程专业的一名在校大学生。
+                有很强的编程功底，善于思考，自学能力和动手能力极强，熟练掌握html,css,JS,vue,react等前端编程知识。
+                本人个性活泼开朗，热情阳光，个性随和，容易交往，责任心强，有集体荣誉感。</div>
+                <p>
+                    Contact me
+                </p>
+                <ul id="contact-font">
+                    <li><i class="iconfont icon-weixin"></i><span>微信：</span></li>
+                    <li><i class="iconfont icon-youxiang"></i><span>邮箱:</span></li>
+                    <li><i class="iconfont icon-github"></i><span>Github:</span></li>
+                </ul>
+            </div>
+            <div id="knowText" style="display: none">
+                    <ul id="circle">
+                        <li>
+                            <canvas id="html5" width="250" height="250">
+                            </canvas>
+                            <div>
+                                <p>Html5</p>
+                                <a>90%</a>
+                            </div>
+                        </li>
+                        <li>
+                            <canvas id='css' width="250" height="250">
+                            </canvas>
+                            <div>
+                                <p>CSS</p>
+                                <a>85%</a>
+                            </div>
+                        </li>
+                        <li>
+                            <canvas id="js" width="250" height="250">
+                            </canvas>
+                            <div>
+                                <p>JS</p>
+                                <a>80%</a>
+                            </div>
+                        </li>
+                    </ul>
+                <div id="Progress-bar" style="clear: both">
+                    <div style="position: relative">
+                        <span style="position: absolute" class="Progress-bar-text" >PHP</span>
+                        <div class="Ball" style="background:skyblue "></div>
+                        <div class="progress-contain">
+                            <div id="php"></div>
+                         </div>
+                    </div>
+                    <div style="position: relative">
+                        <span class="Progress-bar-text" >Vue</span>
+                        <div class="Ball" style="background:#8dcb27 "></div>
+                       <div  class="progress-contain">
+                         <div id="vue"></div>
+                        </div>
+                   </div>
+                    <div style="position: relative">
+                        <span class="Progress-bar-text" >React</span>
+                        <div class="Ball" style="background:#eb7a5d "></div>
+                       <div  class="progress-contain">
+                           <div id="react"></div>
+                       </div>
+                   </div>
+                </div>
+            </div >
+            <div id="projectText"></div>
+        </div>
     </div>
 </div>
 <script src="js/particles.min.js"></script>
@@ -43,12 +116,55 @@
         $(this).on('click', (e)=>{
             for(var j=0;j<modelTitleArry.length;j++){
                 $(modelTitleArry[j]).removeClass('selected')
-
             }
-            console.log(e.trage)
-            //e.addClass('select')
+            $(e.target).addClass('selected')
         })
 
     }
+    var ConvasHtml = document.getElementById('html5');
+    var ConvasCss = document.getElementById('css');
+    var ConvasJS = document.getElementById('js');
+    var cxtHtml = ConvasHtml.getContext('2d');
+    var cxtCss = ConvasCss.getContext('2d');
+    var cxtJS = ConvasJS.getContext('2d');
+    cxtHtml.beginPath();
+    cxtHtml.arc(120,120,100,0,2*Math.PI,true);
+    cxtHtml.strokeStyle='#7973733b';
+    cxtHtml.lineWidth=4;
+    cxtHtml.lineCap='round';
+    cxtHtml.stroke();
+    cxtHtml.beginPath();
+    cxtHtml.arc(120,120,100,-Math.PI/2,-2.3*Math.PI,true);
+    cxtHtml.strokeStyle='#31c7ad';
+    cxtHtml.stroke();
+    cxtCss.beginPath();
+    cxtCss.arc(120,120,100,0,2*Math.PI,true);
+    cxtCss.strokeStyle='#7973733b';
+    cxtCss.lineWidth=4;
+    cxtCss.lineCap='round';
+    cxtCss.stroke();
+    cxtCss.beginPath();
+    cxtCss.arc(120,120,100,-Math.PI/2,-2*Math.PI,true);
+    cxtCss.strokeStyle='#9721c9';
+    cxtCss.stroke();
+    cxtJS.beginPath();
+    cxtJS.arc(120,120,100,0,2*Math.PI,true);
+    cxtJS.strokeStyle='#7973733b';
+    cxtJS.lineWidth= 4;
+    cxtJS.lineCap='round';
+    cxtJS.stroke();
+    cxtJS.beginPath();
+    cxtJS.arc(120,120,100,-Math.PI/2,-1.8*Math.PI,true);
+    cxtJS.strokeStyle='#e4941f';
+    cxtJS.stroke();
+   $('#Progress-bar .Ball').eq(0).animate({'margin-left':'56%'},900,'linear');
+    $('#Progress-bar .Ball').eq(1).animate({'margin-left':'55%'},900,'linear');
+    $('#Progress-bar .Ball').eq(2).animate({'margin-left':'65%'},900,'linear');
+    $('#php').animate({'width':'63%'},900,'linear');
+    $('#react').animate({'width':'81%'},900,'linear');
+    $('#vue').animate({'width':'61%'},900,'linear');
+
+
+
 
 </script>
