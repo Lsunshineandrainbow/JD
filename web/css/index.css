@@ -44,10 +44,7 @@
     background: url("../image/snow.jpg");
     background-repeat: repeat;
 }
-#IntroduceMyself #modelTitle{
-   // float: right;
 
-}
 #IntroduceMyself #modelTitle li{
     float: left;
     width: 15%;
@@ -64,3 +61,98 @@
 #IntroduceMyself #modelTitle .selected{
     border: 1px solid silver;
 }
+#IntroduceMyself #tab{
+    clear: both;
+    position: relative;
+}
+#IntroduceMyself #tab #myText p{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#IntroduceMyself #tab #myText #myText-Personal {
+    width: 80%;
+    margin: 0 auto;
+    font-size:20px ;
+}
+#IntroduceMyself #tab #myText #contact-font i{
+    font-size: 30px;
+}
+#IntroduceMyself #tab #myText #contact-font {
+    width: 80%;
+    margin: 0 auto;
+}
+#IntroduceMyself #tab #myText #contact-font span{
+        margin-left: 25px;
+}
+#circle li{
+    float: left;
+    margin-left: 86px;
+    position: relative;
+}
+#circle div{
+    width: 500px;
+
+}
+ #circle div{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top:120px;
+    left: 22px;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 400;
+    color: rgb(52, 73, 94);
+}
+#index-3 .warpper #techology #circle p{
+    width: 300px;
+    text-align: center;
+
+}
+canvas{
+    margin:3vw;
+}
+#knowText #Progress-bar .progress-contain{
+    border-radius: 10px;
+    width: 50%;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    background-color: #ccc;
+}
+#knowText #Progress-bar .progress-contain #php {
+    width: 0%;
+    border:3.5px solid skyblue;
+    overflow: visible !important;
+
+
+}
+#knowText #Progress-bar .progress-contain #vue{
+width: 0%;
+    border:3.5px solid #8dcb27;
+    overflow: visible !important;
+
+}
+#knowText #Progress-bar .progress-contain #react{
+    width: 0;
+    border:3.5px solid #eb7a5d;
+    overflow: visible !important;
+
+}
+#knowText #Progress-bar .Ball{
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-top: 20px;
+    border-radius: 50%;
+    margin-left: 25%;
+}
+#Progress-bar .Progress-bar-text{
+    position: absolute;
+    left: 20%;
+    top: 36%;
+    font-size: 30px;
+}
+
