@@ -32,8 +32,8 @@
         <li>Project</li>
     </ul>
         <div id="tab">
-            <div id="allText"></div>
-            <div id="myText" style="display: none">
+            <div id="allText" class="tab-Unselected"></div>
+            <div id="myText" class="tab-Unselected Hasselected" >
                 <p>
                     Hello,你好。
                 </p>
@@ -50,7 +50,7 @@
                     <li><i class="iconfont icon-github"></i><span>Github:</span></li>
                 </ul>
             </div>
-            <div id="knowText" style="display: none">
+            <div id="knowText" class="tab-Unselected">
                     <ul id="circle">
                         <li>
                             <canvas id="html5" width="250" height="250">
@@ -101,7 +101,11 @@
                    </div>
                 </div>
             </div >
-            <div id="projectText"></div>
+            <div id="projectText" class="tab-Unselected">
+                <div id="projectText-contain">
+                    <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a><a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -111,16 +115,18 @@
 </html>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
-    var modelTitleArry = $('#modelTitle li');
-    for(var i=0;i<modelTitleArry.length;i++){
-        $(this).on('click', (e)=>{
-            for(var j=0;j<modelTitleArry.length;j++){
-                $(modelTitleArry[j]).removeClass('selected')
-            }
-            $(e.target).addClass('selected')
-        })
 
-    }
+        $('#modelTitle li').each(function (index) {
+           //  $(this).props('index',index);
+            console.log($(this));
+            $(this).click(function () {
+                console.log(index);
+                $('#modelTitle li').removeClass('selected');
+                $('#modelTitle li').eq(index).addClass('selected');
+                $('#tab .tab-Unselected').removeClass("Hasselected");
+                $('#tab .tab-Unselected').eq(index).addClass('Hasselected');
+            })
+    })
     var ConvasHtml = document.getElementById('html5');
     var ConvasCss = document.getElementById('css');
     var ConvasJS = document.getElementById('js');
@@ -163,7 +169,12 @@
     $('#php').animate({'width':'63%'},900,'linear');
     $('#react').animate({'width':'81%'},900,'linear');
     $('#vue').animate({'width':'61%'},900,'linear');
-
+    $('#tab #projectText #projectText-contain a').mouseover(function (e) {
+        $(this).find('.background').css('display','block').addClass('add-tranform');
+        console.log($(e.target).find('.background'))
+    });
+    $('#tab #projectText #projectText-contain a').mouseout(function (e) {
+        $(this).children('.background').addClass('add-tranform').css('display','none')})
 
 
 
