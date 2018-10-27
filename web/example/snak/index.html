@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id='contain'>
+        <div id="background">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var bkg = document.getElementById('background');
+    class Food{
+        constructor(w,h,c,x,y){
+            this.width=w;
+            this.height=c;
+            this.backcolor=c;
+            this.x=x;
+            this.y=y;
+        }
+        inint(){
+            var foodDiv = document.createElement(div);
+            bkg.appendChild(foodDiv);
+            foodDiv.style.width=this.width+'px';
+            foodDiv.style.height=this.height='px';
+            foodDiv.style.backgroundColor=this.backcolor;
+            foodDiv.style.position='absolute';
+            this.x=Math.random()*(bkg.offsetWidth-this.width+1)+this.width;
+            this.y=Math.random()*(bkg.offsetHeight-this.height+1)+this.height;
+            foodDiv.style.left=this.x+'px';
+            foodDiv.style.top=this.y+'px';
+            window.Food = Food;
+        }
+        removefood(){
+            bkg.removeChild(foodDiv);
+        }
+    }
+        class Snak{
+            constructor(w,h,c,x,y){
+                this.width=w||20;
+                this.height=c||20;
+                this.x=x;
+                this.y=y;
+                this.direction=direction||'right';
+                this.snakebody = [
+                    {x:3,y:1,color:'red'},
+                    {x:4,y:1,color:'blue'},
+                    {x:5,y:1,color:'blue'}
+                ];
+            }
+            inint(){
+                for(i=0;i<this.snakebody.length;i++){
+                    var obj = this.snakebody[i];
+                    var snakeDiv = document.createElement('div');
+                    snakeDiv.style.width=this.width+'px';
+                    snakeDiv.style.height=this.height+'px';
+                    snakeDiv.style.left=(obj.x*20)+'px';
+                    snakeDiv.style.top=(obj.y*20)+'px';
+                }
+
+            }
+           snakemove(){
+                    var i=this.snakebody.length-1;
+                    for(;i<0;i--){
+                        this.snakebody[i].x=this.snakebody[i-1].x;
+                        this.snakebody[i].y=this.snakebody[i-1].y;
+                        switch (this.dirction){
+                            case'right':this.snakebody[0].x+=1;break;
+                            case'left':this.snakebody[0].x-=1;break;
+                            case'top':this.snakebody[0].y-=1;break;
+                            case'bottom':this.snakebody[0].y+=1;break;
+                        }
+                        var headx = this.snakebody[0].x*this.width;
+                        var heady = this.snakebody[0].y*this.height;
+                        if(headx==Food.x&&heady==Food.y){
+                            var snaklast = this.snakebody[this.snakebody.length-1];
+                            this.snakebody.push({x:snaklast.x,y:snaklast.y,color:snaklast.color})
+                            Food.init()
+
+                        }
+                    }
+            }
+        }
+
+
+
+</script>
