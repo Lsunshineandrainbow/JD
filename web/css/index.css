@@ -41,9 +41,9 @@
 }
 #Big-contain #IntroduceMyself{
     width: 100%;
-    height: 100vh;
    background: url("../image/snow.jpg");
     background-repeat: repeat;
+    padding-bottom: 1vw;
 }
 
 #IntroduceMyself #modelTitle li{
@@ -78,19 +78,6 @@
     width: 80%;
     margin: 0 auto;
     font-size:20px ;
-}
-#IntroduceMyself #tab #myText #contact-font i{
-    font-size: 30px;
-}
-#IntroduceMyself #tab #myText #contact-font {
-    width: 80%;
-    margin: 0 auto;
-}
-#IntroduceMyself #tab #myText #contact-font li{
-    margin-bottom: 30px;
-}
-#IntroduceMyself #tab #myText #contact-font span{
-        margin-left: 25px;
 }
 #circle li{
     flex-grow: 1;
@@ -161,9 +148,9 @@ width: 0%;
 }
 #tab #projectText #projectText-contain{
 
-    width: 87%;
+    width: 86%;
     margin: 0 auto;
-    background:#000000 ;
+
 }
 #tab #projectText #projectText-contain img{
   width: 28vw;
@@ -215,3 +202,75 @@ width: 0%;
 #tab .tab-Unselected.Hasselected{
     display: block;
 }
+#Last{
+    width: 100%;
+    height: 100vh;
+    background:url("../image/Last.gif") ;
+    overflow: hidden;
+
+}
+#Last #contact{
+    text-align: center;
+    margin-top: 1.5vw;
+}
+#Last #contact span{
+    display: inline-block;
+    font-size:1.4em ;
+    padding: 1vw;
+    background: #9abf0d;
+    color: white;
+}
+#Last #contact-Me{
+    display: flex;
+    flex-direction: row;
+}
+#Last #contact-Me #my-contact{
+
+    flex: 1;
+    background: white;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+    margin-left: 9.5vw;
+    margin-right:9.5vw;
+}
+#Last #contact-Me #my-contact li {
+    margin-bottom: 2vw;
+    border-bottom: 1px solid #9abf0d;
+    margin-top: 1vw;
+    padding-bottom: 2vw;
+}
+#Last #contact-Me #my-contact li i{
+    font-size: 3em;
+    color:#9abf0d ;
+    display: inline-block;
+    margin-bottom: 1vw;
+}
+#Last #contact-Me #my-contact p{
+    font-size: 1.3em;
+    margin-bottom: 1.5vw;
+}
+
+#Last #contact-Me #message{
+    margin-right: 4vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+#Last #contact-Me #my-contact li span{
+    font-size: 1.2em;
+}
+#Last #contact-Me #message input{
+    margin: 1.5vw;
+    height: 4vw;
+    border: 2px solid #9abf0d;
+    text-align: top;
+}
+#Last #contact-Me #message input::-webkit-input-placeholder{
+  text-align: left;
+    padding-left: 10px;
+}
+#Last #contact-Me #message #message-text{
+    height: 10vw;
+}
+
