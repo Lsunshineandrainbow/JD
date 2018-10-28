@@ -24,7 +24,7 @@
         <span id="introduce">My name is Li Jing. I am from Heilongjiang Province, and I am a front end engineer.</span>
     </div>
 </div>
-    <div id="IntroduceMyself">
+    <div id="IntroduceMyself" >
     <ul ID="modelTitle">
         <li>All</li>
         <li class="selected">Me</li>
@@ -34,21 +34,24 @@
         <div id="tab">
             <div id="allText" class="tab-Unselected"></div>
             <div id="myText" class="tab-Unselected Hasselected" >
-                <p>
-                    Hello,你好。
-                </p>
-                <div id="myText-Personal">
-                我叫李晶，目前是东北农业大学软件工程专业的一名在校大学生。
-                有很强的编程功底，善于思考，自学能力和动手能力极强，熟练掌握html,css,JS,vue,react等前端编程知识。
-                本人个性活泼开朗，热情阳光，个性随和，容易交往，责任心强，有集体荣誉感。</div>
-                <p>
-                    Contact me
-                </p>
-                <ul id="contact-font">
-                    <li><i class="iconfont icon-weixin"></i><span>微信：</span></li>
-                    <li><i class="iconfont icon-youxiang"></i><span>邮箱:</span></li>
-                    <li><i class="iconfont icon-github"></i><span>Github:</span></li>
-                </ul>
+
+                <div>
+                    <p>
+                        Hello,你好。
+                    </p>
+                    <div id="myText-Personal">
+                        我叫李晶，目前是东北农业大学软件工程专业的一名在校大学生。
+                        有很强的编程功底，善于思考，自学能力和动手能力极强，熟练掌握html,css,JS,vue,react等前端编程知识。
+                        本人个性活泼开朗，热情阳光，个性随和，容易交往，责任心强，有集体荣誉感。</div>
+                </div>
+               <div id="turn-img">
+                    <div>
+                        <img src="image/girl.jpeg" alt="">
+                        <img src="image/rose.jpeg" alt="">
+                        <img src="image/could.png" alt="">
+                        <img src="image/cat.jpeg" alt="">
+                    </div>
+               </div>
             </div>
             <div id="knowText" class="tab-Unselected">
                     <ul id="circle">
@@ -103,12 +106,42 @@
             </div >
             <div id="projectText" class="tab-Unselected">
                 <div id="projectText-contain">
-                    <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a><a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>
+                    <a href="example/立方体/旋转立方体.html" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a><a href="example/放大镜/magnifier.html" style=""><img src="image/magnifier.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/timer.png" alt="" ><div class="background"></div></a>  <a href="example/tianmao/tmall/index.html" style=""><img src="image/tmallpng.png" alt="" ><div class="background"></div></a>  <a href="example/todoList/list.html" style=""><img src="image/todolistpng.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>
                 </div>
             </div>
         </div>
     </div>
+    <div id="Last">
+        <p id="contact"><span>Contact me</span></p>
+        <div id="contact-Me">
+            <ul id="my-contact">
+                <li>
+                    <i class="iconfont">&#xe60a</i>
+                    <p>Contact By Email</p>
+                    <span>Email:</span>&nbsp;&nbsp;3480782290@qq.com
+                </li>
+                <li>
+                    <i class="iconfont">&#xe73b</i>
+                    <p>Contact By WeChat</p>
+                    <span>WeChat:</span>&nbsp;&nbsp;lj13634511639
+                </li>
+                <li>
+                    <i class="iconfont">&#xea0a</i>
+                   <p>My GitHub</p>
+                    <span>Github:</span><a href="https://github.com/Lsunshineandrainbow">https://github.com/Lsunshineandrainbow</a>
+                </li>
+            </ul>
+            <div id="message">
+                <input type="text" placeholder="name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="WeChat">
+                <input type="text" id="message-text" placeholder="Message...">
+                <button value="Submit" style="width: 7vw;height: 3vw;border: none;background-color: #9abf0d">Submit</button>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="font/iconfont.js"></script>
 <script src="js/particles.min.js"></script>
 <script src="js/app.js"></script>
 </body>
@@ -125,6 +158,11 @@
                 $('#modelTitle li').eq(index).addClass('selected');
                 $('#tab .tab-Unselected').removeClass("Hasselected");
                 $('#tab .tab-Unselected').eq(index).addClass('Hasselected');
+                if(index==2){
+                    $('#Progress-bar .Ball').eq(0).animate({'margin-left':'56%'},900,'linear');
+                    $('#Progress-bar .Ball').eq(1).animate({'margin-left':'55%'},900,'linear');
+                    $('#Progress-bar .Ball').eq(2).animate({'margin-left':'65%'},900,'linear');
+                }
             })
     })
     var ConvasHtml = document.getElementById('html5');
@@ -163,9 +201,9 @@
     cxtJS.arc(120,120,100,-Math.PI/2,-1.8*Math.PI,true);
     cxtJS.strokeStyle='#e4941f';
     cxtJS.stroke();
-   $('#Progress-bar .Ball').eq(0).animate({'margin-left':'56%'},900,'linear');
-    $('#Progress-bar .Ball').eq(1).animate({'margin-left':'55%'},900,'linear');
-    $('#Progress-bar .Ball').eq(2).animate({'margin-left':'65%'},900,'linear');
+   // $('#Progress-bar .Ball').eq(0).animate({'margin-left':'56%'},900,'linear');
+   //  $('#Progress-bar .Ball').eq(1).animate({'margin-left':'55%'},900,'linear');
+   //  $('#Progress-bar .Ball').eq(2).animate({'margin-left':'65%'},900,'linear');
     $('#php').animate({'width':'63%'},900,'linear');
     $('#react').animate({'width':'81%'},900,'linear');
     $('#vue').animate({'width':'61%'},900,'linear');
