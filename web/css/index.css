@@ -10,10 +10,11 @@
     font-family:'STXingkai';
 }
  #list{
+     position: fixed;
+     top: 0;
     width: 100%;
     height: 4.5vw;
-    background: rgba(255, 255, 255, 0.6);
-    position: fixed;
+    background: rgba(255, 255, 255, 0.6)
 }
 #list li {
     float:left ;
@@ -46,6 +47,47 @@
     padding-bottom: 1vw;
 }
 
+#tab #myText #myText-box{
+    display: flex;
+    flex-direction: row;
+}
+#tab #myText #myText-box-text{
+    flex: 1;
+}
+#tab #myText #turn-img {
+    flex: 1;
+    position: relative;
+    clear: both;
+}
+#tab #myText #turn-img div{
+    height: 38vw;
+    margin-left: 10vw;
+}
+#tab #myText #turn-img img{
+        width: 30vw;
+    height: 36vw;
+    border-radius: 10px;
+    position: absolute;
+}
+#tab #myText #turn-img #dot{
+    clear: both;
+    position: absolute;
+    bottom: 1vw;
+    left: 11.7vw;
+}
+#tab #myText #turn-img #dot li{
+
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50% 50%;
+    float: left;
+    background-color: #63a35c;
+    margin: 2.5vw;
+}
+#tab #myText #turn-img #dot .change-dot-color{
+    background-color: #92877a;
+
+}
 #IntroduceMyself #modelTitle li{
     float: left;
     width: 15%;
@@ -204,9 +246,10 @@ width: 0%;
 }
 #Last{
     width: 100%;
-    height: 100vh;
+    /*height: 100vh;*/
     background:url("../image/Last.gif") ;
     overflow: hidden;
+    margin-top: 2.2vw;
 
 }
 #Last #contact{
@@ -264,7 +307,7 @@ width: 0%;
     margin: 1.5vw;
     height: 4vw;
     border: 2px solid #9abf0d;
-    text-align: top;
+
 }
 #Last #contact-Me #message input::-webkit-input-placeholder{
   text-align: left;
@@ -273,4 +316,238 @@ width: 0%;
 #Last #contact-Me #message #message-text{
     height: 10vw;
 }
+#tab #allText #line{
+    width: .4vw;
+    height: 42vw;
+    background: #92877a;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+}
+#tab #allText #logo-image{
+    position: relative;
+    height: 100vh;
+}
+#tab #allText #logo-image .prefont{
+    position: absolute;
+    left: 45%;
+    width: 10%;
+    height: 8%;
+    background-color: #92877a;
+    line-height: 200%;
+    text-align: center;
+}
+#tab #allText #logo-image #line-html{
+    position: absolute;
+    width: 37vw;
+    height: .45vw;
+    background: #92877a;
+    top: 18%;
+    left: 12.4%;
+}
+#tab #allText #logo-image #html-css {
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 8%;
+    left: 2.4vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #logo-image #jquery{
+    position: absolute;
+    width: 35vw;
+    height: .45vw;
+    background: #92877a;
+    top: 23%;
+    right: 14vw;
+}
+#tab #allText #logo-image #jquery-text{
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 12%;
+    right: 4vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #logo-image #all-JS{
+    position: absolute;
+    width: 30vw;
+    height: .45vw;
+    background: #92877a;
+    top: 35%;
+    left: 19.5%;
+}
+#tab #allText #logo-image #all-JS-text{
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 25%;
+    left: 10vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #logo-image #line-DOM{
+    position: absolute;
+    width: 29vw;
+    height: .45vw;
+    background: #92877a;
+    top: 45%;
+    right: 20.5%;
+}
+#tab #allText #logo-image #all-Dom{
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 35%;
+    right: 10vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #logo-image #all-vue{
+    position: absolute;
+    width: 24.2vw;
+    height: .45vw;
+    background: #92877a;
+    top: 62%;
+    left: 25.5%;
+}
+#tab #allText #logo-image #all-vue-text{
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 53%;
+    left: 15vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #logo-image #line-vue-router{
+    position: absolute;
+    width: 12.2vw;
+    height: .45vw;
+    background: #92877a;
+    top: 75%;
+    left: 23.5%;
+    transform: rotatez(45deg);
+}
+#tab #allText #logo-image #all-vue-router{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 80%;
+    left: 31vw;
+    text-align: center;
+    line-height: 7vw;
+}
+#tab #allText #logo-image #line-vuex{
+    position: absolute;
+    width: 12.2vw;
+    height: .45vw;
+    background: #92877a;
+    top: 75%;
+    left:7%;
+    transform: rotatez(-45deg);
+}
+#tab #allText #logo-image #all-vuex{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 80%;
+    left: 4vw;
+    text-align: center;
+    line-height: 7vw;
+}
+#tab #allText #logo-image #all-vue-cli{
+    position: absolute;
+    width: .45vw;
+    height: 7.5vw;
+    background: #92877a;
+    top: 70%;
+    left: 20.5%;
+}
+#tab #allText #logo-image #all-vue-cli-text{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 80%;
+    left: 17vw;
+    text-align: center;
+    line-height: 7vw;
+}
+#tab #allText #all-react-text{
+    position: absolute;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 60%;
+    right: 18vw;
+    text-align: center;
+    line-height: 11vw;
+}
+#tab #allText #line-react{
+    position: absolute;
+    width: 20.5vw;
+    height: .45vw;
+    background: #92877a;
+    top: 70%;
+    right: 29.2%;
+}
+#tab #allText #logo-image #line-react-redux{
+    position: absolute;
+    width: 7.2vw;
+    height: .45vw;
+    background: #92877a;
+    top: 79%;
+    right: 27%;
+    transform: rotatez(-45deg);
+}
+#tab #allText #logo-image #all-react-redux-text{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 80%;
+    right: 31vw;
+    text-align: center;
+    line-height: 7vw;
+}
+#tab #allText #logo-image #line-react-router{
+    position: absolute;
+    width: 7.2vw;
+    height: .45vw;
+    background: #92877a;
+    top: 80%;
+    right: 14%;
+    transform: rotatez(45deg);
 
+}
+#tab #allText #logo-image #all-react-router-text{
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50% 50%;
+    background: #92877a;
+    top: 80%;
+    right: 10vw;
+    text-align: center;
+    line-height: 7vw;
+}
