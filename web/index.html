@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="font/iconfont.css">
 </head>
-<body>
+<body> <div id="list">
+    <ul id="list-nav">
+        <li>home</li>
+        <li>person</li>
+        <li>work</li>
+        <li>contact</li>
+    </ul>
+</div>
 <div id="Big-contain">
-<div id="particles-js">
-    <div id="list">
-        <ul>
-            <li>home</li>
-            <li>person</li>
-            <li>work</li>
-            <li>contact</li>
-        </ul>
-    </div>
+    <div id="particles-js">
     <div id="index-introduce">
         <p id="welcome">Welcome To My Personal Website</p>
         <span id="introduce">My name is Li Jing. I am from Heilongjiang Province, and I am a front end engineer.</span>
@@ -32,26 +31,54 @@
         <li>Project</li>
     </ul>
         <div id="tab">
-            <div id="allText" class="tab-Unselected"></div>
-            <div id="myText" class="tab-Unselected Hasselected" >
-
+            <div id="allText" class="tab-Unselected">
                 <div>
-                    <p>
-                        Hello,你好。
-                    </p>
-                    <div id="myText-Personal">
-                        我叫李晶，目前是东北农业大学软件工程专业的一名在校大学生。
-                        有很强的编程功底，善于思考，自学能力和动手能力极强，熟练掌握html,css,JS,vue,react等前端编程知识。
-                        本人个性活泼开朗，热情阳光，个性随和，容易交往，责任心强，有集体荣誉感。</div>
+                    <div id="logo-image">
+                        <p class="prefont">前端</p>
+                        <div id="line-html"></div><div id="html-css">Html5+Css3</div>
+                        <div id="jquery"></div><div id="jquery-text">jquery</div>
+                        <div id="all-JS"></div><div id="all-JS-text">JS基础+ES6</div>
+                        <div id="line-DOM"></div><div id="all-Dom">DOM+BOM</div>
+                        <div id="line-vue-router"></div><div id="all-vue-router">Router</div>
+                        <div id="all-vue"></div><div id="all-vue-text">VUE</div>
+                        <div id="all-vue-cli"></div><div id="all-vue-cli-text">VueCLI</div>
+                        <div id="line-vuex"></div><div id="all-vuex">Vuex</div>
+                        <div id="line-react"></div><div id="all-react-text">React</div>
+                        <div id="line-react-redux"></div><div id="all-react-redux-text">Redux</div>
+                        <div id="line-react-router"></div><div id="all-react-router-text">React-Router</div>
+                        <div id="line"></div>
+                        <p class="prefont" style="bottom: 0">我</p>
+
+                    </div>
                 </div>
+            </div>
+            <div id="myText" class="tab-Unselected Hasselected" >
+                <div id="myText-box">
+                    <div id="myText-box-text">
+                        <p>
+                        Hello,你好。
+                         </p>
+                        <div id="myText-Personal">
+                            我叫李晶，目前是东北农业大学软件工程专业的一名在校大学生。
+                            有很强的编程功底，善于思考，自学能力和动手能力极强，熟练掌握html,css,JS,vue,react等前端编程知识。
+                            本人个性活泼开朗，热情阳光，个性随和，容易交往，责任心强，有集体荣誉感
+                        </div>
+                    </div>
                <div id="turn-img">
                     <div>
                         <img src="image/girl.jpeg" alt="">
                         <img src="image/rose.jpeg" alt="">
                         <img src="image/could.png" alt="">
                         <img src="image/cat.jpeg" alt="">
+                        <ul id="dot">
+                            <li class="change-dot-color"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
                </div>
+                </div>
             </div>
             <div id="knowText" class="tab-Unselected">
                     <ul id="circle">
@@ -212,8 +239,47 @@
         console.log($(e.target).find('.background'))
     });
     $('#tab #projectText #projectText-contain a').mouseout(function (e) {
-        $(this).children('.background').addClass('add-tranform').css('display','none')})
+        $(this).children('.background').addClass('add-tranform').css('display','none')});
+        $('#turn-img img').map(function (index) {
+            $(this).css('z-index',  $('#turn-img img').length-index);
+            $('#turn-img #dot').css('z-index',5);
+        })
+    $('#turn-img #dot li').map(function (index) {
+        let Index= index;
+        Zindex=4;
+        $(this).click(function() {
+            count=0;
+            count++;
+            Zindex++;
+            console.log(Index)
+            $('#turn-img img').eq(Index).css('z-index',Zindex);
+            $('#turn-img #dot').css('z-index',Zindex+1);
+            $('#turn-img #dot li').css('background','#63a35c');
+            $(this).css('background','#92877a')
+        });
 
+    });
+         function f() {
+             count=0;
+             count++;
+             if(count<3){
+                 $('#turn-img #dot li').click()
+             }
 
+        }
+        var timer = setInterval(f(),1000);
+        timer();
+    $('#list #list-nav li').map(function (index,e) {
+        $(this).click(function () {
+            $('#list #list-nav li').css('color',"#000000");
+            $(this).css('color','#fff');
+            console.log( document.documentElement.scrollTop);
+           if(index==0){
 
+           }if(index==1){
+                $('#Big-contain').scrollTop($('#particles-js').height());
+                console.log( $('#Big-contain').scrollTop())
+            }
+        })
+    })
 </script>
