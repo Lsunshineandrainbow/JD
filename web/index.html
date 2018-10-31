@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="font/iconfont.css">
 </head>
-<body> <div id="list">
+<div style="position: fixed">111</div>
+<body>
+
+<div id="list">
     <ul id="list-nav">
         <li>home</li>
         <li>person</li>
@@ -75,6 +78,8 @@
                             <li></li>
                             <li></li>
                             <li></li>
+                            <span id="pre"></span>
+                            <span id="next"></span>
                         </ul>
                     </div>
                </div>
@@ -107,7 +112,7 @@
                             </div>
                         </li>
                     </ul>
-                <div id="Progress-bar" style="clear: both">
+                <div id="Progress-bar" style="clear: both ;margin-bottom: 30px">
                     <div style="position: relative">
                         <span style="position: absolute" class="Progress-bar-text" >PHP</span>
                         <div class="Ball" style="background:skyblue "></div>
@@ -138,7 +143,7 @@
             </div>
         </div>
     </div>
-    <div id="Last">
+    <div id="Last" style="overflow: hidden;">
         <p id="contact"><span>Contact me</span></p>
         <div id="contact-Me">
             <ul id="my-contact">
@@ -247,28 +252,45 @@
     $('#turn-img #dot li').map(function (index) {
         let Index= index;
         Zindex=4;
-        $(this).click(function() {
+        imgclick=[1,2,3,4];
+         $(this).click(function fn() {
             count=0;
             count++;
             Zindex++;
-            console.log(Index)
             $('#turn-img img').eq(Index).css('z-index',Zindex);
             $('#turn-img #dot').css('z-index',Zindex+1);
             $('#turn-img #dot li').css('background','#63a35c');
             $(this).css('background','#92877a')
         });
-
+       console.log($(this).click)
     });
-         function f() {
-             count=0;
-             count++;
-             if(count<3){
-                 $('#turn-img #dot li').click()
-             }
-
+        var count2=0;
+        function fn(){
+                if (count2<3){
+                    $('#turn-img #dot li')[count2].click();
+                    count2++;
+                } else {
+                    count2=0;
+                }
+                console.log(count2)
         }
-        var timer = setInterval(f(),1000);
-        timer();
+
+       function play(){
+           timer = setInterval(fn,1000);
+       }
+       $('#turn-img div img').mouseover(function () {
+           clearInterval(timer);
+       });
+        $('#dot').mouseover(function () {
+            clearInterval(timer);
+        });
+        $('#dot').mouseout(function () {
+            play();
+        });
+       $('#turn-img div img').mouseout(function () {
+         play();
+       });
+                play();
     $('#list #list-nav li').map(function (index,e) {
         $(this).click(function () {
             $('#list #list-nav li').css('color',"#000000");
@@ -277,8 +299,8 @@
            if(index==0){
 
            }if(index==1){
-                $('#Big-contain').scrollTop($('#particles-js').height());
-                console.log( $('#Big-contain').scrollTop())
+                scrollTo(0,$('#particles-js').height());
+
             }
         })
     })
