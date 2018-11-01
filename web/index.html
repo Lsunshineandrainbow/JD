@@ -37,6 +37,7 @@
             <div id="allText" class="tab-Unselected">
                 <div>
                     <div id="logo-image">
+					<div style="background: url('image/timg5.gif') ;background-size: contain"></div>
                         <p class="prefont">前端</p>
                         <div id="line-html"></div><div id="html-css">Html5+Css3</div>
                         <div id="jquery"></div><div id="jquery-text">jquery</div>
@@ -48,7 +49,7 @@
                         <div id="line-vuex"></div><div id="all-vuex">Vuex</div>
                         <div id="line-react"></div><div id="all-react-text">React</div>
                         <div id="line-react-redux"></div><div id="all-react-redux-text">Redux</div>
-                        <div id="line-react-router"></div><div id="all-react-router-text">React-Router</div>
+                        <div id="line-react-router"></div><div id="all-react-router-text" style='font-size: 1vw'>React-Router</div>
                         <div id="line"></div>
                         <p class="prefont" style="bottom: 0">我</p>
 
@@ -138,7 +139,7 @@
             </div >
             <div id="projectText" class="tab-Unselected">
                 <div id="projectText-contain">
-                    <a href="example/立方体/旋转立方体.html" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a><a href="example/放大镜/magnifier.html" style=""><img src="image/magnifier.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/timer.png" alt="" ><div class="background"></div></a>  <a href="example/tianmao/tmall/index.html" style=""><img src="image/tmallpng.png" alt="" ><div class="background"></div></a>  <a href="example/todoList/list.html" style=""><img src="image/todolistpng.png" alt="" ><div class="background"></div></a>  <a href="" style=""><img src="image/CSS.png" alt="" ><div class="background"></div></a>
+                    <a href="example/立方体/旋转立方体.html" style=""><img src="image/CSS.png" alt="" ><div class="background"><span>项目1</span></div></a><a href="example/放大镜/magnifier.html" style=""><img src="image/magnifier.png" alt="" ><div class="background"><span>项目2</span></div></a><a href="example/表/timer.html" style=""><img src="image/timer.png" alt="" ><div class="background"><span>项目3</span></div></a><a href="example/tianmao/tmall/index.html" style=""><img src="image/tmallpng.png" alt="" ><div class="background"><span>项目4</span></div></a><a href="example/todoList/list.html" style=""><img src="image/todolistpng.png" alt="" ><div class="background"><span>项目5</span></div></a><a href="" style=""><img src="image/vueapp.png" alt="example/vueapp" ><div class="background"><span>项目6</span></div></a>
                 </div>
             </div>
         </div>
@@ -243,7 +244,7 @@
         $(this).find('.background').css('display','block').addClass('add-tranform');
         console.log($(e.target).find('.background'))
     });
-    $('#tab #projectText #projectText-contain a').mouseout(function (e) {
+    $('#tab #projectText #projectText-contain a').mouseleave(function (e) {
         $(this).children('.background').addClass('add-tranform').css('display','none')});
         $('#turn-img img').map(function (index) {
             $(this).css('z-index',  $('#turn-img img').length-index);
@@ -297,11 +298,25 @@
             $(this).css('color','#fff');
             console.log( document.documentElement.scrollTop);
            if(index==0){
-
+               scrollTo(0,0);
            }if(index==1){
                 scrollTo(0,$('#particles-js').height());
-
+                $('#modelTitle li').eq(1).click();
             }
+            if(index==2){
+               $('#modelTitle li').eq(3).click();
+                scrollTo(0,$('#particles-js').height());
+
+			}if(index==3){
+                scrollTo(0,$('#particles-js').height()+$('#IntroduceMyself').height());
+			}
+        })
+    })
+	$(':button').click(function () {
+		$(':text').map(function () {
+			if($(this).val()==""){
+
+			}
         })
     })
 </script>
