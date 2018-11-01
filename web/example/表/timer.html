@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>js时钟效果</title>
+    <style>
+        .clock{
+            margin: 200px auto;
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%;
+            background: url("images/表盤.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .center{
+            width: 20px;
+            height: 20px;
+            background: #e62f2f;
+            border-radius: 10px;
+            position: absolute;
+            top: 9.4vw;
+            left: 8.4vw;
+            transform-origin: bottom;
+        }
+        .h{
+            width: 7px;
+            height: 40px;
+            background: #000000;
+            border-radius: 10px;
+            position: absolute;
+            top: 6.7vw;
+            left: 9vw;
+            transform-origin: bottom;
+        }
+        .m{
+            width: 7px;
+            height: 56px;
+            background: #000000;
+            border-radius: 10px;
+            position: absolute;
+            top: 5vw;
+            left: 9vw;
+            transform-origin: bottom;
+        }
+        .s{
+            width: 7px;
+            height: 60px;
+            background: #000000;
+            border-radius: 10px;
+            position: absolute;
+            top: 5vw;
+            left: 9vw;
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+<div class="clock" id="clo">
+    <div class="h"></div>
+    <div class="m"></div>
+    <div class="s"></div>
+    <div class="center"></div>
+</div>
+</body>
+</html>
+<script src="../../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    var data = new Date();
+    var a = data.getHours();
+    var b = data.getMinutes()/60;
+    var c = data.getSeconds()/3600;
+    var H = document.getElementsByClassName('h')[0];
+    var str =(a+b+c)*30
+    var str =`${ data.getHours()}${ data.getMinutes()/60}${data.getSeconds()/3600}${'deg'}`
+    ;
+    var num = parseInt(str)*30;
+    setInterval(function () {
+        $('.h').css({
+        transform :'rotate(str)'
+        })
+        },200)
+    setInterval(function () {
+        var data = new Date();
+        var a = data.getHours();
+        var b = data.getMinutes();
+        var c = data.getSeconds();
+        var H = document.getElementsByClassName('h')[0];
+        var M = document.getElementsByClassName('m')[0];
+        var S = document.getElementsByClassName('s')[0];
+        H.style.transform ='rotate('+a*30+'deg)';
+        // H.style.transform = 'rotate(30deg)'
+        M.style.transform ='rotate('+b*6+'deg)';
+        S.style.transform ='rotate('+c*6+'deg)';
+
+    },20)
+
+</script>
